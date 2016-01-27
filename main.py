@@ -72,6 +72,7 @@ class _Physics(object):
             self.y_vel=0
             
 def atOver(surface,score,hi_score):
+"""Called when bird lands"""
     zoom=3
     gameover_index=[(145,198)]
     board_index=[(146,58)]
