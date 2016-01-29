@@ -72,7 +72,6 @@ class _Physics(object):
             self.y_vel=0
             
 def atOver(surface,score,hi_score):
-"""Called when bird lands"""
     zoom=3
     gameover_index=[(145,198)]
     board_index=[(146,58)]
@@ -86,8 +85,8 @@ def atOver(surface,score,hi_score):
     surface.blit(gameover,pg.Rect((100-10,100),gameover_size))
     surface.blit(board,pg.Rect((100-50,200),board_size))
     surface.blit(start,pg.Rect((100+50,400),start_size))        
-    make_text(surface,(280,250),score)
-    make_text(surface,(280,320),hi_score)
+    make_text(surface,(280,250),score,(41/2,62/2))
+    make_text(surface,(280,320),hi_score,(41/2,62/2))
 class Bird(_Physics,pg.sprite.Sprite):
     def __init__(self):
         _Physics.__init__(self)
@@ -176,10 +175,10 @@ whenever player hits the score rectangle, the score increments by 1
         return self.score
     def check_over(self):
         return self.over
-def make_text(screen,where,score=0):
+def make_text(screen,where,score=0,num_size_displayed=(41,62)):
     numbers_index=[(369,0),(0,0),(41,0),(82,0),(123,0),(164,0),(205,0),(246,0),(287,0),(328,0)]
     num_size=(41,62)
-    num_size_displayed=(num_size[0]/2,num_size[1]/2)
+    
     numbers=split(NUM_SHEET,num_size,numbers_index,num_size_displayed)
     place =2
     temp=score
@@ -252,7 +251,8 @@ class Control(object):
         self.surface.draw(self.screen)
         
         self.player.draw(self.screen)
-        make_text(self.screen,(SCREEN_SIZE[0]/2-40,50),self.score)
+	if not self.player.touchdown:
+        	make_text(self.screen,(SCREEN_SIZE[0]/2-100,50),self.score)
 
     def main_loop(self):
         """As simple as that"""
