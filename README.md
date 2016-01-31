@@ -4,4 +4,6 @@ Py-Bird is a flappy Bird clone written in Python
 -PyGame libraries
 https://www.pygame.org/
 
-
+**Sprite Credits:**
+Superjustinbros
+http://www.spriters-resource.com/mobile/flappybird/sheet/59537/
