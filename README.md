@@ -1,7 +1,8 @@
 # py-Bird
-Py-Bird is a flappy Bird clone written in Python
-#Dependencies
--PyGame libraries
+Py-Bird is a flappy Bird clone written in Python. 
+
+# Dependencies
+-PyGame library
 https://www.pygame.org/
 
 **Sprite Credits:**
